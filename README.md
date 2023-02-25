@@ -130,35 +130,6 @@ iface can0 can static
 
 Power off/on everything
 
-> check for network
-```
-ip a
-```
-```
-can0: <NOARP,UP,LOWER_UP,ECHO> mtu 16 qdisc pfifo_fast state UP group default qlen 1024
-link/can
-```
-
-> Check for more details
-```
-ip -details -statistics link show can0
-```
-```
-can0: <NOARP,UP,LOWER_UP,ECHO> mtu 16 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1024
-link/can  promiscuity 0 minmtu 0 maxmtu 0
-can state ERROR-ACTIVE restart-ms 0
-        bitrate 1000000 sample-point 0.750
-        tq 62 prop-seg 5 phase-seg1 6 phase-seg2 4 sjw 1
-        gs_usb: tseg1 1..16 tseg2 1..8 sjw 1..4 brp 1..1024 brp-inc 1
-        clock 48000000
-        re-started bus-errors arbit-lost error-warn error-pass bus-off
-        0          0          0          0          0          0         numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535
-RX: bytes  packets  errors  dropped overrun mcast
-11412      1551     0       0       0       0
-TX: bytes  packets  errors  dropped carrier collsns
-3568       641      0       0       0       0
-```
-
 
 ## Klipper with CAN
 
@@ -219,6 +190,35 @@ python3 flash_can.py -f ~/firmware/octopus_1.1_klipper.bin -d /dev/serial/by-id/
 The board should now be flash with a klipper can bridge.
 
 > If this part doesn't work or you don't manage to see the board as an USB device, refer to [Useful tricks](###-Useful-tricks-to-be-able-to-update-an-octopus-1.1-in-`USB-to-Can-Bridge`)
+
+> check for network
+```
+ip a
+```
+```
+can0: <NOARP,UP,LOWER_UP,ECHO> mtu 16 qdisc pfifo_fast state UP group default qlen 1024
+link/can
+```
+
+> Check for more details
+```
+ip -details -statistics link show can0
+```
+```
+can0: <NOARP,UP,LOWER_UP,ECHO> mtu 16 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1024
+link/can  promiscuity 0 minmtu 0 maxmtu 0
+can state ERROR-ACTIVE restart-ms 0
+        bitrate 1000000 sample-point 0.750
+        tq 62 prop-seg 5 phase-seg1 6 phase-seg2 4 sjw 1
+        gs_usb: tseg1 1..16 tseg2 1..8 sjw 1..4 brp 1..1024 brp-inc 1
+        clock 48000000
+        re-started bus-errors arbit-lost error-warn error-pass bus-off
+        0          0          0          0          0          0         numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535
+RX: bytes  packets  errors  dropped overrun mcast
+11412      1551     0       0       0       0
+TX: bytes  packets  errors  dropped carrier collsns
+3568       641      0       0       0       0
+```
 
 #### Klipper for sb2040
 
