@@ -191,6 +191,8 @@ The board should now be flash with a klipper can bridge.
 
 > If this part doesn't work or you don't manage to see the board as an USB device, refer to [Useful tricks](###-Useful-tricks-to-be-able-to-update-an-octopus-1.1-in-`USB-to-Can-Bridge`)
 
+Reboot your board.
+
 > check for network
 ```
 ip a
