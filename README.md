@@ -15,7 +15,7 @@ pip3 install pyserial
 ### Hardware
 - raspberry pi
 - BTT octopus 1.1
-- Mellow SB2040
+- BTT EBB 36 v1.2
 
 
 ## CanBoot
