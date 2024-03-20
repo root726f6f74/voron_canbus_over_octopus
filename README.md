@@ -177,14 +177,14 @@ mv ~/klipper/out/klipper.bin ~/firmware/sb2040_1.0_klipper.bin
 #### Klipper for octopus 1.1
 
 ```
-ls -al /dev/serial/by-id
+ls -al /dev/serial/by-path
 ```
 > Note the serial of the octopus 1.1 board
 
 ```
 cd ~/CanBoot/scripts
 pip3 install pyserial
-python3 flash_can.py -f ~/firmware/octopus_1.1_klipper.bin -d /dev/serial/by-id/usb-CanBoot_stm32f446xx_170038000650314D35323820-if00
+python3 flash_can.py -f ~/firmware/octopus_1.1_klipper.bin -d /dev/serial/by-path/usb-CanBoot_stm32f446xx_170038000650314D35323820-if00
 ```
 
 The board should now be flash with a klipper can bridge.
